@@ -1,4 +1,4 @@
-baseurl = "golab-slingr.netlify.app/" # Make sure to end baseurl with a '/'
+baseurl = "https://golab-slingr.netlify.app/" # Make sure to end baseurl with a '/'
 title = "golab LIMS"
 author = "Slingr"
 # Shown in the side menu
