@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="{{ if .IsNode }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ else }}{{ with .Description }}{{ . }}{{ end }}{{ end }}">
+  {{hugo.Generator}}
+
+  <title>{{ if .IsHome }}{{ .Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}</title>
+
+  {{ if .Params.canonical }}
+  <link rel="canonical" href="{{ .Params.canonical }}">
+  {{ end }}
+
+  <!-- CSS -->
+  <!-- {{ $purecss := "https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/" }} -->
+
+  {{ "<!--[if lte IE 8]>" | safeHTML }}
+  <link rel="stylesheet" href="{{ $purecss }}grids-responsive-old-ie-min.css">
+  {{ "<![endif]-->" | safeHTML }}
+  {{ "<!--[if gt IE 8]><!-->" | safeHTML }}
+  <link rel="stylesheet" href="{{ $purecss }}grids-responsive-min.css">
+  {{ "<!--<![endif]-->" | safeHTML }}
+
+  {{ "<!--[if lte IE 8]>" | safeHTML }}
+  <link rel="stylesheet" href="/css/side-menu-old-ie.css">
+  {{ "<![endif]-->" | safeHTML }}
+  {{ "<!--[if gt IE 8]><!-->" | safeHTML }}
+  <link rel="stylesheet" href="./css/side-menu.css">
+  {{ "<!--<![endif]-->" | safeHTML }}
+  <link rel="stylesheet" href="./css/pure-min.css">
+  <link rel="stylesheet" href="./css/blackburn.css">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" type="text/css">
+
+  <!-- MathJax -->
+  <script async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  <!-- RSS -->
+  {{ if .OutputFormats.Get "RSS" }}
+  <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}"
+    href='{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}' />
+  {{ end }}
+
+  {{ with .Site.Params.highlightjs }}
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/{{ . }}.min.css">
+  <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+  {{ range $.Site.Params.highlightjs_extra_languages }}
+  <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/languages/{{ . }}.min.js"></script>
+  {{ end }}
+  <script>hljs.initHighlightingOnLoad();</script>
+  {{ end }}
+
+  {{ partial "favicon.html" . }}
+
+  {{ range .Site.Params.custom_css }}
+  {{ if findRE "https?://" . }}
+  <link rel="stylesheet" href="{{ . }}">
+  {{ else }}
+  <link rel="stylesheet" href="{{ $.Site.BaseURL }}{{ . }}">
+  {{ end }}
+  {{ end }}
+  {{ range .Site.Params.custom_js }}
+  {{ if findRE "https?://" . }}
+  <script src="{{ . }}"></script>
+  {{ else }}
+  <script src="{{ $.Site.BaseURL }}{{ . }}"></script>
+  {{ end }}
+  {{ end }}
+
+</head>
+
+<body>
+  <div id="layout">
+
+    <!-- Menu toggle -->
+    <a href="#menu" id="menuLink" class="menu-link">
+      <!-- Hamburger icon -->
+      <span></span>
+    </a>
+    <div id="menu">
+
+      {{ partial "brand.html" . }}
+
+      <div class="pure-menu">
+        <ul class="pure-menu-list">
+          {{ range .Site.Menus.main }}
+          {{ if .HasChildren }}
+          <li class="pure-menu-item pure-menu-has-children">
+            <a class="pure-menu-link" href="#">{{ .Pre }}{{ .Name }}</a>
+            <ul class="pure-menu-children">
+              {{ range .Children }}
+              <li class="pure-menu-item">
+                <a class="pure-menu-link" href="{{ .URL }}">{{ .Name }}</a>
+              </li>
+              {{ end }}
+            </ul>
+            {{else}}
+          <li class="pure-menu-item">
+            <a class="pure-menu-link" {{ printf "href=%q" .URL | safeHTMLAttr }}>{{ .Pre }}{{ .Name }}</a>
+            {{end}}
+          </li>
+          {{end}}
+        </ul>
+      </div>
+
+      {{ partial "social.html" . }}
+
+      {{ partial "copyright.html" . }}
+    </div>
+    <div id="main">
+
+      <section id="welcome-to-golab" class="home__header-section">
+        <img class="home__logo" src="/img/golab-logo.png" />
+      </section>
+      <section class="home__welcome-section">
+        <h1>Welcome to golab!</h1>
+        <p>
+          "golab" is a project created during Slingr's first bootcamp. Our team aimed
+          to use low-code tools to solve a simulated problem comprehensively. This
+          project helped us become familiar with innovative tools and our company's
+          methodology, and allowed us to develop our skills in the technology
+          industry.
+        </p>
+      </section>
+      <section class="home__team-section">
+        <h2 id="the-team">The Team</h2>
+        <div class="home__team-card-container">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="/img/01-team.jpeg" alt="Avatar" />
+              </div>
+              <div class="flip-card-back">
+                <h3>
+                  <a href="https://www.linkedin.com/in/mpmoraleservin/" target="_blank" rel="noopener noreferrer">
+                    Paula <br />
+                    Morales</a>
+                </h3>
+                <p>Team Lead</p>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="/img/02-team.jpeg" alt="Avatar" />
+              </div>
+              <div class="flip-card-back">
+                <h3>
+                  <a href="https://www.linkedin.com/in/luisnimes/" target="_blank" rel="noopener noreferrer">
+                    Facundo <br />
+                    Nimes</a>
+                </h3>
+                <p>
+                  Full Stack <br />
+                  Developer
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="/img/03-team.jpeg" alt="Avatar" />
+              </div>
+              <div class="flip-card-back">
+                <h3>
+                  <a href="https://www.linkedin.com/in/guillermo-baker/" target="_blank" rel="noopener noreferrer">
+                    Guillermo <br />
+                    Baker</a>
+                </h3>
+                <p>
+                  Full Stack <br />
+                  Developer
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="/img/04-team.jpeg" alt="Avatar" />
+              </div>
+              <div class="flip-card-back">
+                <h3>
+                  <a href="https://www.linkedin.com/in/leocipollone/" target="_blank" rel="noopener noreferrer">Leonardo
+                    <br />
+                    Cipollone</a>
+                </h3>
+                <p>
+                  Full Stack <br />
+                  Developer
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="home__text-section">
+        <div class="home__text-container">
+          <img src="/img/home-solution-scope.png" alt="solution scope" />
+          <h2 id="solution-scope">Solution Scope</h2>
+          <div class="card-content">
+            <p>Our project consisted of several components:</p>
+            <p>
+              <span>Understanding the problem</span>: Conducting research to
+              understand the complexities of the problem and create an identity for
+              the solution, including a name and institutional image.
+            </p>
+            <p>
+              <span>Developing a Platform App</span>: Creating a centralized
+              application with Slingr to manage business data, automate complex
+              workflows, and integrate with notification systems through endpoints.
+            </p>
+            <p>
+              <span>Developing a Mobile App</span>: Developing a mobile application
+              with Flutterflow to provide users with easy access to specific features.
+            </p>
+            <p>
+              <span>Creating a Landing Page</span>: Using Webflow to create a landing
+              page for the LIMS company, aimed at attracting new patients, showcasing
+              the company's expertise, generating leads, and establishing credibility.
+            </p>
+            <p>
+              <span>Creating Documentation</span>: Developing documentation to record
+              the entire process and key points of the solution using HUGO, a static
+              site generator.
+            </p>
+          </div>
+        </div>
+        <div class="home__text-container">
+          <img src="/img/home-understanding-the-problem.png" alt="undestanding the problem" />
+          <h2 id="undestanding-the-problem">Understanding the problem</h2>
+          <div class="card-content">
+            <p>
+              We focused on creating a Laboratory Information Management System
+              (LIMS), a software system designed to manage, track, and document
+              laboratory processes, data, and samples. Our client, a fictitious
+              testing laboratory called "golab" based in Mendoza, Argentina, aimed to
+              earn the loyalty and satisfaction of their patients and become the
+              laboratory that they rely on and recommend with confidence.
+            </p>
+            <h2 class="home-text-branding" id="branding">Branding</h2>
+            <p>
+              We created the name "golab" short for "go laboratory." We also designed
+              a unique color palette that departs from the typical colors used in the
+              healthcare industry to create an elegant and modern image. Our
+              minimalist logos reinforce the brand's emphasis on elegance and
+              modernity.
+            </p>
+            <img src="/img/golab-logo.png" alt="golab logo">
+          </div>
+        </div>
+        <div class="home__text-container">
+          <img src="/img/home-features.png" alt="features" />
+          <h2 id="features">Features</h2>
+          <div class="card-content">
+            <p>Our LIMS platform includes several key features:</p>
+            <p><span>Data Set</span>: A system for managing sample information.</p>
+            <p>
+              <span>Samples Management and Workflow</span>: Workflow and process
+              management to streamline laboratory operations.
+            </p>
+            <p>
+              <span>Report Automation</span>: Automatic generation of sample reports
+              when sample statuses change to "ready" with patient information.
+            </p>
+            <p>
+              <span>Customer Accessioning</span>: Easy management of patient
+              accessioning.
+            </p>
+            <p>
+              <span>Automated Notifications</span>: Notifications that automatically
+              alert users to important changes in sample statuses and other key
+              metrics.
+            </p>
+            <p>
+              <span>Metrics Dashboard</span>: A dashboard to quickly assess sample and
+              patient statuses.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="home__stack-section">
+        <h2 id="stack">Stack</h2>
+        <div class="home__stack-container">
+          <div>
+            <a href="https://www.slingr.io/" target="_blank"><img class="home-stack-logo" src="/img/slingr-logo.png"
+                alt="Slingr" /></a>
+            <p>Slingr</p>
+          </div>
+          <div>
+            <a href="https://gohugo.io/" target="_blank"><img class="home-stack-logo" src="/img/hugo-logo.png"
+                alt="Hugo" /></a>
+            <p>Hugo</p>
+          </div>
+          <div>
+            <a href="https://flutterflow.io/" target="_blank"><img class="home-stack-logo"
+                src="/img/flutterflow-logo.webp" alt="FluterFlow" /></a>
+            <p>FlutterFlow</p>
+          </div>
+          <div>
+            <a href="https://webflow.com/" target="_blank"><img class="home-stack-logo" src="/img/webflow-logo.png"
+                alt="WebFlow" /></a>
+            <p>WebFlow</p>
+          </div>
+          <div>
+            <a href="https://mailchimp.com/" target="_blank"><img class="home-stack-logo" src="/img/mailchimp-logo.png"
+                alt="Mailchimp" /></a>
+            <p>Mailchimp</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+{{ partial "footer.html" . }}
+
+</html>

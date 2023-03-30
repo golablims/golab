@@ -1,0 +1,423 @@
+.header {
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  background-color: #c3a587;
+}
+.header h1 {
+  font-weight: 500;
+}
+.header h2 {
+  color: #f2f2f2;
+}
+a {
+  color: #c3a587;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+a:visited {
+  color: #aa8f74;
+}
+.small-print {
+  font-size: 0.8em;
+  margin: 0.6em;
+}
+
+.post-meta {
+  font-size: 90%;
+}
+
+article > footer {
+  text-align: right;
+}
+
+.prev-next-post {
+  margin-top: 2em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.prev-next-post .prev {
+  float: left;
+  text-align: left;
+  overflow: hidden;
+}
+
+.prev-next-post .next {
+  float: right;
+  text-align: right;
+  overflow: hidden;
+}
+
+#menu a {
+  padding: 0.6em;
+}
+
+#menu .brand {
+  font-family: Raleway;
+  font-weight: bold;
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  text-transform: none;
+  background: transparent;
+  text-decoration: none;
+  margin: 0.5em 0;
+}
+
+#menu .pure-menu {
+  font-size: 0.9em;
+}
+
+#menu .pure-menu ul.pure-menu-children {
+  border-top: none;
+}
+
+i {
+  display: inline-block;
+  margin-right: 0.2em;
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 3em;
+}
+.pagination a {
+  color: #265778;
+}
+figure {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.home-visit-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+.home-visit-button-container:hover {
+  text-decoration: none;
+}
+.home-visit-button {
+  display: flex;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 7px;
+  background-color: #c3a587;
+  color: #333;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.4);
+  margin-top: 2rem;
+  transition: transform 0.2s ease-in-out;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.home-visit-button:hover {
+  background-color: #333;
+  color: #c3a587;
+  transform: scale(1.1);
+}
+.landing-desktop {
+  display: block;
+}
+.landing-mobile {
+  display: none;
+}
+.home__logo {
+  width: 20%;
+}
+.home__header-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+  height: 50vh;
+}
+.home__welcome-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #4e4d4f;
+  color: #c3a587;
+  height: 50vh;
+}
+.home__welcome-section h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+.home__welcome-section p {
+  font-size: 1.5rem;
+  text-align: justify;
+  padding: 0 30%;
+}
+.home__team-section {
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+.home__team-section h2 {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 5%;
+}
+.home__team-card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.home__text-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  background-color: #4e4d4f;
+  padding: 6rem 0;
+  color: #c3a587;
+}
+.home__text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 28%;
+}
+.home__text-container img {
+  width: 50%;
+  filter: drop-shadow(4px 6px 6px rgba(0, 0, 0, 0.4));
+  align-self: center;
+}
+.home__text-section h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+.home-text-branding {
+  margin-bottom: 0rem;
+}
+span {
+  font-weight: bold;
+  font-style: normal;
+}
+.home__text-section p {
+  font-size: 1.3rem;
+  text-align: justify;
+  font-style: italic;
+}
+.card-content {
+  display: flex;
+  flex-direction: column;
+}
+.home__stack-section {
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 50vh;
+}
+.home__stack-section h2 {
+  font-size: 3rem;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 5%;
+}
+.home__stack-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.home__stack-container div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home__stack-container img {
+  width: 150px;
+  height: 150px;
+  margin: 1rem;
+  filter: drop-shadow(5px 10px 6px rgba(0, 0, 0, 0.4));
+}
+.home-stack-logo {
+  transition: transform 0.2s ease-in-out;
+}
+.home-stack-logo:hover {
+  transform: scale(1.1);
+}
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  margin: 5px;
+}
+.flip-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  filter: drop-shadow(5px 10px 6px rgba(0, 0, 0, 0.4));
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: #4e4d4f;
+  color: #c3a587;
+  transform: rotateY(180deg);
+  border-radius: 50%;
+  filter: drop-shadow(5px 10px 6px rgba(0, 0, 0, 0.4));
+}
+.flip-card-back h3 {
+  margin-top: 2.5rem;
+  font-size: 1.7rem;
+}
+.flip-card-back h3:hover a {
+  text-decoration: none;
+}
+@media (max-width: 1366px) {
+  .home__welcome-section p {
+    font-size: 1.3rem;
+    text-align: justify;
+    padding: 0 15%;
+  }
+  .home__team-section {
+    height: auto;
+    padding: 10% 0;
+  }
+  .home__stack-section {
+    height: auto;
+    padding: 10% 0;
+  }
+  .home__stack-container {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 52em) {
+  /* Only apply this when the window is small.*/
+  figure {
+    width: auto;
+  }
+  .landing-desktop {
+    display: none;
+  }
+  .landing-mobile {
+    display: block;
+  }
+  .home__logo {
+    width: 50%;
+    justify-self: center;
+  }
+  .home__header-section {
+    height: 40vh;
+  }
+  .home__welcome-section {
+    padding: 3rem 1rem;
+    height: auto;
+  }
+  .home__welcome-section h1 {
+    font-size: 3rem;
+    text-align: center;
+  }
+  .home__welcome-section p {
+    font-size: 1.2rem;
+  }
+  .home__team-section {
+    padding: 3rem 0;
+  }
+  .home__team-card-container {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  .home__team-title {
+    font-size: 2rem;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 5%;
+  }
+  .home__text-section {
+    padding: 3rem 1rem;
+    flex-direction: column;
+  }
+  .home__text-section p {
+    text-align: center;
+  }
+  .home__text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    border-radius: 1.5rem;
+    margin: 1rem 0;
+  }
+  .home__text-title {
+    width: 100%;
+  }
+  .home__text-img {
+    display: none;
+    width: 0%;
+  }
+  .home__text-section h2 {
+    font-size: 2rem;
+  }
+  .home__text-section p,
+  .home__text-section ul {
+    font-size: 1.2rem;
+  }
+  .home__stack-container img {
+    width: 100px;
+    height: 100px;
+    margin: 1rem;
+  }
+  .flip-card {
+    background-color: transparent;
+    width: 150px;
+    height: 150px;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    margin: 5px;
+  }
+  .flip-card img {
+    width: 150px;
+    height: 150px;
+  }
+  .flip-card-back h3 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    margin-bottom: 0;
+  }
+}
