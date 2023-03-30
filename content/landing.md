@@ -14,8 +14,6 @@ The landing page serves as a central hub for visitors to access relevant informa
 
 <a class="home-visit-button-container" href="https://golab.webflow.io/" target="_blank">
 <button class="home-visit-button" href="https://golab.webflow.io/">Visit now</button>
-{{< figure src="/img/landing-desktop.gif" class="landing-desktop" width="100%" >}}
-{{< figure src="/img/landing-mobile.gif" class="landing-mobile" width="100%" >}}
 </a>
 
 ## Features
