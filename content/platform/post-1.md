@@ -16,7 +16,7 @@ The golab platform is the backbone of our LIMS solution, provinding a powerful a
 
 The application was developed using [Slingr](https://slingr.io/), a cloud-based low-code platform that allows developers to automate business workflows and integrate various tools and services.
 
-{{< figure src="/img/slingr-logo-trns.svg" width="50%" >}}
+{{< figure src="/img/slingr-logo.svg" width="50%" >}}
 
 ### Features
 
