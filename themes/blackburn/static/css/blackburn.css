@@ -95,9 +95,6 @@ figure {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
-.main {
-  font-family: "Raleway", Helvetica, Arial, sans-serif;
-}
 .home-visit-button-container {
   display: flex;
   flex-direction: column;
